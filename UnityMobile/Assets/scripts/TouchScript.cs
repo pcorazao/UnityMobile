@@ -26,6 +26,11 @@ public class TouchScript : MonoBehaviour {
 
 	void OnGUI()
 	{
+		if (GUI.Button (new Rect (0, 0, 100, 100), "Touch")) {
+			var camera = GetComponent<Camera>();
+			camera.backgroundColor = Color.red;
+		}
+
 		foreach (Touch touch in Input.touches) {
 			string message = "";
 			message += "ID: " + touch.fingerId + "\n";
